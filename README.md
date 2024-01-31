@@ -1,10 +1,21 @@
-# My Personal Project
+# Escaping the Maze
 
-## A subtitle
+### What is the Application?
 
-A *bulleted* list:
-- item 1
-- item 2
-- item 3
+The application I want to create is a puzzle game in which the user tries to figure out a pathway to escape the randomly generated maze. 
+The user types commands such as "W A S D" into the console which the character within the game follows. Some features I want to include in my application are as follows:
+- A set timer that when ends causes a game over screen to appear 
+- Power-ups that gives the user the ability to jump over a wall or stop the time
+- Being able to keep track of the fastest times the maze has been solved
 
-An example of text with **bold** and *italic* fonts.  
+### Who will use it?
+
+Anyone can play this game but the target audience is for **people who enjoy playing games and want a 
+fun challenge**. I want to create a game that I find enjoyable and would want other people to experience as well. 
+
+### Why this Application?
+
+The choice of studying computer science was inspired by my love of games since childhood. My dream is to work at a tech company that produces video games such as EA or Riot Games.
+I figured the first step to achieving my dream would be to create a small game that I could show to 
+future employers that I have the capabilities to help produce games. 
+
