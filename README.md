@@ -26,6 +26,6 @@ asset in my gym experience and I am sure others would love it as well.
 # User Stories
 
 - As a user, I want to be able to add my current workout information into a list 
-- As a user, I want to be able to view a list that tracks all of my workouts for a single muscle group
-- As a user, I want to be able to see the changes in my repetition and weights
+- As a user, I want to be able to view a list that tracks all of my workouts 
+- As a user, I want to be able to see the changes in my most recent repetition and weights
 - As a user, I want to be able to delete an entry
