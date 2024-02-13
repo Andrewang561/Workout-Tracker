@@ -30,7 +30,7 @@ public class Entries {
                 }
             }
         }
-        return  "Repetition: " + Integer.toString(second.getRepetition() - first.getRepetition())
+        return "Repetition: " + Integer.toString(second.getRepetition() - first.getRepetition())
                 + " Weight: " + Integer.toString(second.getWeight() - first.getWeight());
     }
 
@@ -43,5 +43,14 @@ public class Entries {
 
     public ArrayList<Entry> getEntries() {
         return entries;
+    }
+
+    public String viewEntries() {
+        for (Entry e : entries) {
+            return "\nEntry:" + "\n" + e.getMuscleGroup() + "\n" + e.getNameWorkout()
+                    + "\n" + Integer.toString(e.getSet()) + "\n" + Integer.toString(e.getRepetition())
+                    + "\n" + Integer.toString(e.getWeight());
+        }
+        return null;
     }
 }

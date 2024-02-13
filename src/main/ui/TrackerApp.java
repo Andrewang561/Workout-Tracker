@@ -91,7 +91,7 @@ public class TrackerApp {
 
     // EFFECTS: shows viewer a list of all their entries
     private void doViewEntries() {
-        System.out.println("Here is a list of your entries!:" + entries.getEntries());
+        System.out.println("Here is a list of your entries!:" + entries.viewEntries());
     }
 
     // MODIFIES: this

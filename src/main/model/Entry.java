@@ -21,6 +21,7 @@ public class Entry {
         this.set = set;
     }
 
+
     public String getMuscleGroup() {
         return muscleGroup;
     }
