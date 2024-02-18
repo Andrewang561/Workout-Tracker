@@ -21,6 +21,7 @@ public class Entry {
         this.set = set;
     }
 
+    // EFFECTS: Produce true is user is progress overloading
     public Boolean isProgressiveOverloading() {
         if (set > 3 || repetition < 6 || repetition > 10) {
             return false;

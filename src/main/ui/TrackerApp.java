@@ -10,10 +10,12 @@ public class TrackerApp {
     private Entries entries;
     private Scanner input;
 
+    // EFFECTS: Runs the tracker application
     public TrackerApp() {
         runTracker();
     }
 
+    // adapted from the teller application
     // MODIFIES: this
     // EFFECTS: processes user input
     private void runTracker() {
@@ -36,6 +38,7 @@ public class TrackerApp {
         }
     }
 
+    // adapted from the teller application
     // MODIFIES: this
     // EFFECTS: processes user command
     private void processCommand(String command) {
@@ -59,6 +62,7 @@ public class TrackerApp {
         input.useDelimiter("\n");
     }
 
+    // EFFECTS: displays the main menu
     private void displayMenu() {
         System.out.println("\nSelect from:");
         System.out.println("\te -> write and add your entry to the list!");
@@ -103,13 +107,14 @@ public class TrackerApp {
         System.out.print("Please enter the position of the entry you would like to delete!\n");
 
         int pos = input.nextInt();
+        input.nextLine();
         entries.deleteEntry(pos);
         System.out.println("Deleted!");
     }
 
     // EFFECTS: shows the user the progress they have made from the 2 most recent workouts
     public void doProgressCheck() {
-        System.out.print("Please enter the name of the workout you would like to see your progress for!");
+        System.out.print("Please enter the name of the workout you would like to see your progress for!\n");
 
         String nameOfWorkout = input.nextLine();
         System.out.println("Here's your progress:" + entries.findProgress(nameOfWorkout));

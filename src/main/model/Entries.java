@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Entries {
     private ArrayList<Entry> entries;
 
+    // EFFECTS: creates a new empty list of entries
     public Entries() {
         this.entries = new ArrayList<Entry>();
     }
@@ -52,6 +53,7 @@ public class Entries {
         return entries;
     }
 
+    // EFFECTS: Creates a string with all users entries
     public String viewEntries() {
         int counter = 0;
         String listOfEntries = "";
