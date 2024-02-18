@@ -86,6 +86,9 @@ public class TrackerApp {
         input.nextLine();
         Entry entry = new Entry(muscleGroup, weight, rep, name, set);
         entries.addEntry(entry);
+        if (!entry.isProgressiveOverloading()) {
+            System.out.println("WARNING: You are not Progressive Overloading!");
+        }
         System.out.print("Successfully added!");
     }
 

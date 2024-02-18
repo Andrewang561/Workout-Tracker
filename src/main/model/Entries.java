@@ -30,8 +30,15 @@ public class Entries {
                 }
             }
         }
+        if (first == null && second == null) {
+            return "No Progress Found!";
+        }
+        if (first == null) {
+            return "Repetition: " + Integer.toString(second.getRepetition()) + ", Weight: "
+                    + Integer.toString(second.getWeight());
+        }
         return "Repetition: " + Integer.toString(second.getRepetition() - first.getRepetition())
-                + " Weight: " + Integer.toString(second.getWeight() - first.getWeight());
+                + ", Weight: " + Integer.toString(second.getWeight() - first.getWeight());
     }
 
     // Requires: 0 <= position - 1 < length of entries
