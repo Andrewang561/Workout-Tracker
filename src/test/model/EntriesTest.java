@@ -26,7 +26,7 @@ class EntriesTest {
         listOfEntry.addEntry(e1);
         listOfEntry.addEntry(e2);
         listOfEntry.addEntry(e3);
-        listOfEntry1.addEntry(e1);
+        listOfEntry1.addEntry(e2);
         listOfEntry1.addEntry(e3);
         listOfEntry2.add(e1);
         listOfEntry2.add(e2);
@@ -49,5 +49,13 @@ class EntriesTest {
         listOfEntry.deleteEntry(1);
         assertTrue(listOfEntry1.getEntries().equals(listOfEntry.getEntries()));
         assertFalse(listOfEntry2.equals(listOfEntry.getEntries()));
+    }
+
+    @Test
+    public void testViewEntries() {
+        assertEquals("\n-Entry 1: \nMuscle Group: Chest, Name of Workout: Bench Press, Sets: 4, Repetition: 3, Weight: 55"
+                + "\n-Entry 2: \nMuscle Group: Back, Name of Workout: Lat Pull-Down, Sets: 3, Repetition: 3, Weight: 80",
+                listOfEntry1.viewEntries());
+
     }
 }

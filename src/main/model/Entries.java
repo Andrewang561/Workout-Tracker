@@ -37,7 +37,7 @@ public class Entries {
     // Requires: 0 <= position - 1 < length of entries
     // EFFECTS: deletes an entry from the list
     public void deleteEntry(int position) {
-        int normalPosition = position++;
+        int normalPosition = position - 1;
         entries.remove(normalPosition);
     }
 
@@ -46,11 +46,15 @@ public class Entries {
     }
 
     public String viewEntries() {
+        int counter = 0;
+        String listOfEntries = "";
         for (Entry e : entries) {
-            return "\nEntry:" + "\n" + e.getMuscleGroup() + "\n" + e.getNameWorkout()
-                    + "\n" + Integer.toString(e.getSet()) + "\n" + Integer.toString(e.getRepetition())
-                    + "\n" + Integer.toString(e.getWeight());
+            counter++;
+            listOfEntries += "\n-Entry " + Integer.toString(counter) + ": " + "\nMuscle Group: "
+                    + e.getMuscleGroup() + ", Name of Workout: " + e.getNameWorkout()
+                    + ", Sets: " + Integer.toString(e.getSet()) + ", Repetition: " + Integer.toString(e.getRepetition())
+                    + ", Weight: " + Integer.toString(e.getWeight());
         }
-        return null;
+        return listOfEntries;
     }
 }

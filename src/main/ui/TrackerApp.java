@@ -97,7 +97,7 @@ public class TrackerApp {
     // MODIFIES: this
     // EFFECTS: deletes an entry from the list decided by the user
     private void doDeleteEntry() {
-        System.out.print("Please enter the position of the entry you would like to delete!");
+        System.out.print("Please enter the position of the entry you would like to delete!\n");
 
         int pos = input.nextInt();
         entries.deleteEntry(pos);
