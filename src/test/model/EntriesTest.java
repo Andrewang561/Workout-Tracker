@@ -36,7 +36,7 @@ class EntriesTest {
     @Test
     public void testFindProgress() {
         Entries listOfEntries4 = new Entries();
-        assertEquals("Repetition: -2, Weight: 5", listOfEntry.findProgress("Bench Press"));
+        assertEquals("Repetition Change: -2, Weight Change: 5", listOfEntry.findProgress("Bench Press"));
         assertEquals("Repetition: 3, Weight: 80", listOfEntry.findProgress("Lat Pull-Down"));
         assertEquals("No Progress Found!", listOfEntries4.findProgress("Name"));
     }

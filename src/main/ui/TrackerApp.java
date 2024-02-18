@@ -117,7 +117,7 @@ public class TrackerApp {
         System.out.print("Please enter the name of the workout you would like to see your progress for!\n");
 
         String nameOfWorkout = input.nextLine();
-        System.out.println("Here's your progress:" + entries.findProgress(nameOfWorkout));
+        System.out.println("Here's your progress:\n" + entries.findProgress(nameOfWorkout));
     }
 
 }

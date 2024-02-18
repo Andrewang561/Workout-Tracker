@@ -22,7 +22,7 @@ public class Entries {
         Entry first = null;
         Entry second = null;
         for (int i = entries.size() - 1; i >= 0; i--) {
-            if (entries.get(i).getNameWorkout() == nameWorkout) {
+            if (entries.get(i).getNameWorkout().equals(nameWorkout)) {
                 if (second == null) {
                     second = entries.get(i);
                 } else {
@@ -38,8 +38,8 @@ public class Entries {
             return "Repetition: " + Integer.toString(second.getRepetition()) + ", Weight: "
                     + Integer.toString(second.getWeight());
         }
-        return "Repetition: " + Integer.toString(second.getRepetition() - first.getRepetition())
-                + ", Weight: " + Integer.toString(second.getWeight() - first.getWeight());
+        return "Repetition Change: " + Integer.toString(second.getRepetition() - first.getRepetition())
+                + ", Weight Change: " + Integer.toString(second.getWeight() - first.getWeight());
     }
 
     // Requires: 0 <= position - 1 < length of entries
