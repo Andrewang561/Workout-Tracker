@@ -21,6 +21,14 @@ public class Entry {
         this.set = set;
     }
 
+    public Boolean isProgressiveOverloading() {
+        if (set > 3 || repetition < 6 || repetition > 10) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
     public String getMuscleGroup() {
         return muscleGroup;
