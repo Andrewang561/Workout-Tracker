@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+// Creates a single entry with the following fields: muscleGroup, repetition, weight, nameWorkout, and set
 public class Entry {
     private String muscleGroup; // name of muscle group being worked out
     private int repetition;     // number of repetitions

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+// Creates a list for multiple entries
 public class Entries {
     private ArrayList<Entry> entries;
 
