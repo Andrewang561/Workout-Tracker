@@ -1,9 +1,12 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Entry {
+public class Entry implements Writable {
     private String muscleGroup; // name of muscle group being worked out
     private int repetition;     // number of repetitions
     private int weight;         // the weight of the equipment
@@ -28,6 +31,17 @@ public class Entry {
         } else {
             return true;
         }
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("muscleGroup", muscleGroup);
+        json.put("weight", weight);
+        json.put("repetition", repetition);
+        json.put("nameWorkout", nameWorkout);
+        json.put("set", set);
+        return json;
     }
 
 

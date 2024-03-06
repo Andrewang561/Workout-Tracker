@@ -16,8 +16,8 @@ class EntriesTest {
 
     @BeforeEach
     public void runBefore() {
-        listOfEntry = new Entries();
-        listOfEntry1 = new Entries();
+        listOfEntry = new Entries("Andrew");
+        listOfEntry1 = new Entries("Andrew");
         listOfEntry2 = new ArrayList<Entry>();
         listOfEntry3 = new ArrayList<Entry>();
         Entry e1 = new Entry("Chest", 50, 5, "Bench Press", 3);
@@ -33,9 +33,14 @@ class EntriesTest {
         listOfEntry2.add(e3);
     }
 
+
+    @Test
+    public void testGetName() {
+        assertEquals("Andrew", listOfEntry.getName());
+    }
     @Test
     public void testFindProgress() {
-        Entries listOfEntries4 = new Entries();
+        Entries listOfEntries4 = new Entries("Andrew");
         assertEquals("Repetition Change: -2, Weight Change: 5", listOfEntry.findProgress("Bench Press"));
         assertEquals("Repetition: 3, Weight: 80", listOfEntry.findProgress("Lat Pull-Down"));
         assertEquals("No Progress Found!", listOfEntries4.findProgress("Name"));

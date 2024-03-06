@@ -1,13 +1,23 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
-public class Entries {
+public class Entries implements Writable {
+    private String name;
     private ArrayList<Entry> entries;
 
-    // EFFECTS: creates a new empty list of entries
-    public Entries() {
+    // EFFECTS: creates a new empty list of entries with a name
+    public Entries(String name) {
+        this.name = name;
         this.entries = new ArrayList<Entry>();
+    }
+
+    public String getName() {
+        return name;
     }
 
     // MODIFIES: this
@@ -65,5 +75,25 @@ public class Entries {
                     + ", Weight: " + Integer.toString(e.getWeight());
         }
         return listOfEntries;
+    }
+
+    // EFFECTS: puts entries into Json
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("entries", entriesToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this workroom as a JSON array
+    private JSONArray entriesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Entry e : entries) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
     }
 }

@@ -2,16 +2,28 @@ package ui;
 
 import model.Entries;
 import model.Entry;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 
 // Workout Tracker Application
 public class TrackerApp {
     private Entries entries;
     private Scanner input;
+    private static final String JSON_STORE = "./data/workroom.json";
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: Runs the tracker application
-    public TrackerApp() {
+    public TrackerApp() throws FileNotFoundException {
+        input = new Scanner(System.in);
+        entries = new Entries("Andrew's Entries");
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runTracker();
     }
 
@@ -21,7 +33,6 @@ public class TrackerApp {
     private void runTracker() {
         boolean keepGoing = true;
         String command = null;
-        entries = new Entries();
 
         inTracker();
 
@@ -50,6 +61,10 @@ public class TrackerApp {
             doDeleteEntry();
         } else if (command.equals("p")) {
             doProgressCheck();
+        } else if (command.equals("s")) {
+            saveEntries();
+        } else if (command.equals("l")) {
+            loadEntries();
         } else {
             System.out.println("Please select one of the options");
         }
@@ -69,6 +84,8 @@ public class TrackerApp {
         System.out.println("\tv -> view all of your entries!");
         System.out.println("\td -> delete an entry!");
         System.out.println("\tp -> check your progress!");
+        System.out.println("\ts -> save your list of entries");
+        System.out.println("\tl -> load your list of entries");
         System.out.println("\tq -> quit the application :(");
     }
 
@@ -118,6 +135,29 @@ public class TrackerApp {
 
         String nameOfWorkout = input.nextLine();
         System.out.println("Here's your progress:\n" + entries.findProgress(nameOfWorkout));
+    }
+
+    // EFFECTS: saves the entries to file
+    private void saveEntries() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(entries);
+            jsonWriter.close();
+            System.out.println("Saved " + entries.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads entries from file
+    private void loadEntries() {
+        try {
+            entries = jsonReader.read();
+            System.out.println("Loaded " + entries.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 
 }
