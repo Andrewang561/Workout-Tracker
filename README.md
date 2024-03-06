@@ -29,3 +29,5 @@ asset in my gym experience and I am sure others would love it as well.
 - As a user, I want to be able to view a list that tracks all of my workouts 
 - As a user, I want to be able to see the changes in my most recent repetition and weights
 - As a user, I want to be able to delete an entry
+- As a user, I want to be able to save all of my workout entries
+- As a user, I want to be able to load my saved entries from a file
