@@ -1,0 +1,19 @@
+{
+    "entries": [
+        {
+            "nameWorkout": "Bench Press",
+            "set": 3,
+            "muscleGroup": "Chest",
+            "weight": 50,
+            "repetition": 8
+        },
+        {
+            "nameWorkout": "Rows",
+            "set": 5,
+            "muscleGroup": "Back",
+            "weight": 55,
+            "repetition": 10
+        }
+    ],
+    "name": "My Entries"
+}

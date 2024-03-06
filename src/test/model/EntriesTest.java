@@ -38,6 +38,12 @@ class EntriesTest {
     public void testGetName() {
         assertEquals("Andrew", listOfEntry.getName());
     }
+
+    @Test
+    public void testNumEntries() {
+        assertEquals(3, listOfEntry.numEntries());
+    }
+
     @Test
     public void testFindProgress() {
         Entries listOfEntries4 = new Entries("Andrew");

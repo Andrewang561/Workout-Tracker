@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import persistence.Writable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 // Represents a list of entries
 public class Entries implements Writable {
@@ -26,6 +27,13 @@ public class Entries implements Writable {
     public void addEntry(Entry e) {
         entries.add(e);
     }
+
+    // MODIFIES: this
+    // EFFECTS: returns total number of entries
+    public int numEntries() {
+        return entries.size();
+    }
+
 
     // REQUIRES: at least 2 entries in the list with the same workout name
     // EFFECTS: gives the user the changes in their repetition, weight and set from 2 most recent workouts
