@@ -34,6 +34,7 @@ public class Entry implements Writable {
         }
     }
 
+    // Puts the entry object into JSON
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
