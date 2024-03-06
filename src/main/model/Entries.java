@@ -6,6 +6,7 @@ import persistence.Writable;
 
 import java.util.ArrayList;
 
+// Represents a list of entries
 public class Entries implements Writable {
     private String name;
     private ArrayList<Entry> entries;

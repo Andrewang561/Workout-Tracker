@@ -6,6 +6,7 @@ import persistence.Writable;
 import java.util.ArrayList;
 import java.util.List;
 
+// Represents an entry with a muscle group, repetition, weight, name of workout, and set
 public class Entry implements Writable {
     private String muscleGroup; // name of muscle group being worked out
     private int repetition;     // number of repetitions
