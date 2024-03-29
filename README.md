@@ -31,3 +31,15 @@ asset in my gym experience and I am sure others would love it as well.
 - As a user, I want to be able to delete an entry
 - As a user, I want to be able to save all of my workout entries
 - As a user, I want to be able to load my saved entries from a file
+
+# Instructions for Grader
+
+- You can generate the first required action related to the user story "adding multiple Xs to a Y" by pressing
+the delete button to the left of the entry
+- You can generate the second required action related to the user story "adding multiple Xs to a Y" by pressing the find
+progress button on the bottom of the menu which finds the progress made from the two most
+recent workouts with the same name
+- You can locate my visual component by using the find progress function, adding an entry, inputting incorrect 
+information.
+- You can save the state of my application by clicking the save button
+- You can reload the state of my application by clicking the load btuton

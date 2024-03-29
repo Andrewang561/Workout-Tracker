@@ -170,8 +170,14 @@ public class GraphicalInterface extends JFrame implements ActionListener {
 
     // EFFECTS: saves the list of entries to the file
     private void saveEntry() {
-        jsonWriter.write(entries);
-        displaySuccessGraphic("Successfully saved your entries!");
+        try {
+            jsonWriter.open();
+            jsonWriter.write(entries);
+            jsonWriter.close();
+            displaySuccessGraphic("Successfully saved your entries!");
+        } catch (Exception e) {
+            displayErrorMessage("Unable to save!");
+        }
     }
 
     // MODIFIES: this
