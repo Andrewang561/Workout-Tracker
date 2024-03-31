@@ -23,9 +23,10 @@ public class Entries implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds an entry to the list of entries
+    // EFFECTS: adds an entry to the list of entries and logs the event
     public void addEntry(Entry e) {
         entries.add(e);
+        EventLog.getInstance().logEvent(new Event("Added an entry to workout list!"));
     }
 
     // MODIFIES: this
@@ -51,12 +52,15 @@ public class Entries implements Writable {
             }
         }
         if (first == null && second == null) {
+            EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
             return "No Progress Found!";
         }
         if (first == null) {
+            EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
             return "Repetition: " + Integer.toString(second.getRepetition()) + ", Weight: "
                     + Integer.toString(second.getWeight());
         }
+        EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
         return "Repetition Change: " + Integer.toString(second.getRepetition() - first.getRepetition())
                 + ", Weight Change: " + Integer.toString(second.getWeight() - first.getWeight());
     }
@@ -66,6 +70,13 @@ public class Entries implements Writable {
     public void deleteEntry(int position) {
         int normalPosition = position - 1;
         entries.remove(normalPosition);
+        EventLog.getInstance().logEvent(new Event("Deleted an entry!"));
+    }
+
+    // EFFECTS: deletes an entry from the list
+    public void deleteEntryEvent(Entry e) {
+        entries.remove(e);
+        EventLog.getInstance().logEvent(new Event("Deleted an entry!"));
     }
 
     public ArrayList<Entry> getEntries() {

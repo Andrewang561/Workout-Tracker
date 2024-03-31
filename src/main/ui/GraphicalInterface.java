@@ -124,7 +124,7 @@ public class GraphicalInterface extends JFrame implements ActionListener {
             JButton entryButton = new JButton(printEntry(entry));
 
             deleteButton.addActionListener(E -> {
-                entries.getEntries().remove(entry);
+                entries.deleteEntryEvent(entry);
                 entriesPanel.remove(entryCard);
                 refreshGraphics();
                 displaySuccessGraphic("Successfully deleted entry!");

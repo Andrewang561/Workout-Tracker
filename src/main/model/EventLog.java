@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+// Adapted from the Alarm System Application
 // Represents a log of workout tracker events
 public class EventLog implements Iterable<Event> {
     private static EventLog theLog;

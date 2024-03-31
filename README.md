@@ -42,4 +42,19 @@ recent workouts with the same name
 - You can locate my visual component by using the find progress function, adding an entry, inputting incorrect 
 information.
 - You can save the state of my application by clicking the save button
-- You can reload the state of my application by clicking the load btuton
+- You can reload the state of my application by clicking the load button
+
+---
+
+# Phase 4: Task 2
+Sun Mar 31 11:28:05 PDT 2024
+Added an entry to workout list!
+Sun Mar 31 11:28:24 PDT 2024
+Added an entry to workout list!
+Sun Mar 31 11:28:42 PDT 2024
+Found progress made from 2 entries!
+Sun Mar 31 11:28:52 PDT 2024
+Deleted an entry!
+Sun Mar 31 11:28:53 PDT 2024
+Deleted an entry!
+
