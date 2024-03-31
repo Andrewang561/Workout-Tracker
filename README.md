@@ -47,14 +47,29 @@ information.
 ---
 
 # Phase 4: Task 2
-Sun Mar 31 11:28:05 PDT 2024
+Sun Mar 31 11:28:05 PDT 2024\
 Added an entry to workout list!
-Sun Mar 31 11:28:24 PDT 2024
+
+Sun Mar 31 11:28:24 PDT 2024\
 Added an entry to workout list!
-Sun Mar 31 11:28:42 PDT 2024
+
+Sun Mar 31 11:28:42 PDT 2024\
 Found progress made from 2 entries!
-Sun Mar 31 11:28:52 PDT 2024
+
+Sun Mar 31 11:28:52 PDT 2024\
 Deleted an entry!
-Sun Mar 31 11:28:53 PDT 2024
+
+Sun Mar 31 11:28:53 PDT 2024\
 Deleted an entry!
+
+# Phase 4: Task 3
+The biggest change I would make on my project would be on the Writeable interface. My 
+current implementation forces my Entry and Entries class to implement a toJson() method as both 
+these classes implements Writeable. This makes the program unnecessarily more complicated by introducing
+an interface class into the project.
+
+To refactor the project, I would delete the Writeable interface and instead of implementing
+the conversion of my Entry and Entries into JsonObjects inside of each respective class, I would move it all
+into the JsonReader and Writer class. This reduces the number of classes within my project
+and increases the readability and simplicity without impacting the functionality or efficiency. 
 

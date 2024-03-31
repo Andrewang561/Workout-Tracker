@@ -48,7 +48,6 @@ class EntriesTest {
     public void testFindProgress() {
         Entries listOfEntries4 = new Entries("Andrew");
         assertEquals("Repetition Change: -2, Weight Change: 5", listOfEntry.findProgress("Bench Press"));
-        assertEquals("Repetition: 3, Weight: 80", listOfEntry.findProgress("Lat Pull-Down"));
         assertEquals("No Progress Found!", listOfEntries4.findProgress("Name"));
     }
 
@@ -61,6 +60,14 @@ class EntriesTest {
     @Test
     public void testDeleteEntry() {
         listOfEntry.deleteEntry(1);
+        assertTrue(listOfEntry1.getEntries().equals(listOfEntry.getEntries()));
+        assertFalse(listOfEntry2.equals(listOfEntry.getEntries()));
+    }
+
+    @Test
+    public void testDeleteEntryEvent() {
+        Entry entry = listOfEntry.getEntries().get(0);
+        listOfEntry.deleteEntryEvent(entry);
         assertTrue(listOfEntry1.getEntries().equals(listOfEntry.getEntries()));
         assertFalse(listOfEntry2.equals(listOfEntry.getEntries()));
     }
