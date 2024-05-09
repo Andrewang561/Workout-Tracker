@@ -55,7 +55,7 @@ public class Entries implements Writable {
             EventLog.getInstance().logEvent(new Event("Found progress made from 0 entries!"));
             return "No Progress Found!";
         }
-        EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
+        //EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
         return "Repetition Change: " + Integer.toString(second.getRepetition() - first.getRepetition())
                 + ", Weight Change: " + Integer.toString(second.getWeight() - first.getWeight());
     }
