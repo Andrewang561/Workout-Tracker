@@ -52,13 +52,30 @@ public class Entries implements Writable {
             }
         }
         if (first == null && second == null) {
-            EventLog.getInstance().logEvent(new Event("Found progress made from 0 entries!"));
-            return "No Progress Found!";
+            return eventWithNoEntries();
         }
-        //EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
-        return "Repetition Change: " + Integer.toString(second.getRepetition() - first.getRepetition())
-                + ", Weight Change: " + Integer.toString(second.getWeight() - first.getWeight());
+        if (first == null) {
+            return eventWithOneEntry(second.getRepetition(), second.getWeight());
+        } else {
+            EventLog.getInstance().logEvent(new Event("Found progress made from 2 entries!"));
+            return "Repetition Change: " + Integer.toString(second.getRepetition() - first.getRepetition())
+                    + ", Weight Change: " + Integer.toString(second.getWeight() - first.getWeight());
+        }
     }
+
+    // EFFECTS: creates a new event with 0 entries and returns progress
+    public String eventWithNoEntries() {
+        EventLog.getInstance().logEvent(new Event("Found progress made from 0 entries!"));
+        return "No Progress Found!";
+    }
+
+    // EFFECTS: creates a new event with 1 entry and returns progress
+    public String eventWithOneEntry(int rep, int weight) {
+        EventLog.getInstance().logEvent(new Event("Found progress made from 1 entries!"));
+        return "Repetition Change: " + Integer.toString(rep) + ", Weight Change: " + Integer.toString(weight);
+    }
+
+
 
     // Requires: 0 <= position - 1 < length of entries
     // EFFECTS: deletes an entry from the list
